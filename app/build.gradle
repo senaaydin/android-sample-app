@@ -78,12 +78,19 @@ android {
         targetCompatibility compiler.java
     }
 
+    composeOptions {
+        kotlinCompilerVersion = compiler.kotlin
+        kotlinCompilerExtensionVersion = compiler.compose
+    }
+
     kotlinOptions {
         jvmTarget = compiler.java
+        useIR = true
     }
 
     buildFeatures {
         dataBinding true
+        compose = true
     }
 
     packagingOptions {
